@@ -16,9 +16,9 @@ public class TestCompareAndSwap {
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 int expectedValue = cas.getValue();
-                log.info("初始值：" + expectedValue);
+                log.info("初始值：{}", expectedValue);
                 boolean b = cas.compareAndSet(expectedValue, (int) (Math.random() * 101));
-                log.info("替换：" + b);
+                log.info("替换：{}", b);
             }).start();
         }
 
@@ -57,7 +57,7 @@ class CompareAndSwapDemo {
     }
 
     synchronized boolean compareAndSet(int expectedValue, int newValue) {
-        log.info("期望值：" + expectedValue + "新值：" + newValue);
+        log.info("期望值：{}  新值：{}", expectedValue, newValue);
         return expectedValue == compareAndSwap(expectedValue, newValue);
     }
 
