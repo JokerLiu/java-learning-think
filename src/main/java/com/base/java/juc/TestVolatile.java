@@ -1,4 +1,4 @@
-package com.base.java.juc.test_volatile;
+package com.base.java.juc;
 
 import lombok.extern.slf4j.Slf4j;
 

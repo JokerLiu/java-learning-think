@@ -24,7 +24,7 @@ public class TestCopyOnWriteArrayList {
 @Slf4j
 class CopyOnWriteArrayListDemo implements Runnable {
 
-    // 线程不安全，在多线程并发下，读写操作throw new ConcurrentModificationException();
+    // ArrayList是线程不安全的，在多线程并发下，读写操作会throw new ConcurrentModificationException();
     // private static List<String> list = new ArrayList<>();
 
     // 添加操作多时，效率低，因为每次添加时都会进行复制，开销非常的大。并发迭代操作多时可以选择。
