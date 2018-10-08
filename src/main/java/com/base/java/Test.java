@@ -15,6 +15,7 @@ public class Test {
         int b = 1 << 4;
         int c = 3 << 4;// 3 -> 二进制表示： 11
 
+
         System.out.println(Integer.toBinaryString(a));// 二进制： 1000000000000000000000000000000
         System.out.println(Integer.toBinaryString(b));// 二进制： 10000
         System.out.println(Integer.toBinaryString(c));// 二进制： 110000
