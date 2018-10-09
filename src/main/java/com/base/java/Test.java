@@ -10,6 +10,10 @@ public class Test {
 
     public static void main(String[] args) {
 
+        int x = 1;
+        x <<= 4;// 位移运算后赋值给变量
+        System.out.println(x);
+
         // 左移运算
         int a = 1 << 30;
         int b = 1 << 4;
