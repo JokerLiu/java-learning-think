@@ -14,7 +14,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestHashMapAndHashTable {
 
     public static void main(String[] args) {
-
         /**
          * 1.HashMap实现了Map、Cloneable、Serializable，继承AbstractMap
          *  Hashtable实现了Map、Cloneable、Serializable，继承Dictionary（已被废弃）
@@ -24,7 +23,6 @@ public class TestHashMapAndHashTable {
          * 3.线程安全：
          *  HashMap是线程不安全的。而HashTable是线程安全的，类中的方法全部使用了synchronized修饰了
          */
-
         // Map<String, Object> map = new HashMap<>();
 
         Hashtable<String, Object> hashTable = new Hashtable<>();
@@ -38,10 +36,20 @@ public class TestHashMapAndHashTable {
          * JDK1.8中，使用CAS算法优化。
          */
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+    }
+}
 
+/**
+ * @Description 计算数组中出现次数最多的那个数字，利用了hashMap的特性
+ * @return
+ * @Author Joker
+ * @Date 2018/10/9 17:44
+ */
+class CalculateArrayMostNumber {
 
+    private int[] a = {2, 3, 2, 2, 1, 4, 2, 2, 2, 7, 9, 6, 2, 2, 3, 1, 0};
 
-        int[] a = {2, 3, 2, 2, 1, 4, 2, 2, 2, 7, 9, 6, 2, 2, 3, 1, 0};
+    public void cal(int[] a) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int anA : a) {
             if (map.containsKey(anA)) {
@@ -52,13 +60,13 @@ public class TestHashMapAndHashTable {
                 map.put(anA, 1);
             }
         }
+
         Set<Integer> set = map.keySet();//------------1------------
         for (Integer s : set) {
             if (map.get(s) >= a.length / 2) {
                 System.out.println(s);
             }
         }
-
     }
 
 }
