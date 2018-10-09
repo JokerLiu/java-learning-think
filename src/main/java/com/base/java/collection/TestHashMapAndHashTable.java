@@ -39,7 +39,7 @@ public class TestHashMapAndHashTable {
          */
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 
-        new A();
+
 
         int[] a = {2, 3, 2, 2, 1, 4, 2, 2, 2, 7, 9, 6, 2, 2, 3, 1, 0};
         Map<Integer, Integer> map = new HashMap<>();
@@ -61,31 +61,4 @@ public class TestHashMapAndHashTable {
 
     }
 
-}
-
-// class A {
-//
-//     private final String val;
-//
-//     public A() {
-//         this.val = null;
-//     }
-//
-//     public A(String val) {
-//         this();
-//         this.val = val;
-//     }
-// }
-
-class A {
-
-    private final String val;
-
-    public A() {
-        this("asd");
-    }
-
-    public A(String val) {
-        this.val = val;
-    }
 }

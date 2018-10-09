@@ -20,7 +20,6 @@ public class OverrideAnno {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(s1);
     }
     //@Override
