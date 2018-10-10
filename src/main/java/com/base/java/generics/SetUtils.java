@@ -1,4 +1,4 @@
-package com.base.java.Generics;
+package com.base.java.generics;
 
 import java.util.Arrays;
 import java.util.HashSet;

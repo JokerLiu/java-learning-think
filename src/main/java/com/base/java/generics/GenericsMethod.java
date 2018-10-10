@@ -1,4 +1,4 @@
-package com.base.java.Generics;
+package com.base.java.generics;
 
 /**
  * @Author: Joker
@@ -26,7 +26,7 @@ public class GenericsMethod {
         java.lang.Double
         java.lang.Float
         java.lang.Character
-        com.java.Generics.GenericsMethod
+        com.java.generics.GenericsMethod
         */
     }
 }
