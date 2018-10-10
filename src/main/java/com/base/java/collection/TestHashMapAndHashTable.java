@@ -23,7 +23,7 @@ public class TestHashMapAndHashTable {
          * 3.线程安全：
          *  HashMap是线程不安全的。而HashTable是线程安全的，类中的方法全部使用了synchronized修饰了
          */
-        // Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
 
         Hashtable<String, Object> hashTable = new Hashtable<>();
 
