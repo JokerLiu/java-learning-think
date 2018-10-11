@@ -1,4 +1,4 @@
-package com.web.example.utils;
+package com.web.utils;
 
 /**
  * Twitter_Snowflake<br>

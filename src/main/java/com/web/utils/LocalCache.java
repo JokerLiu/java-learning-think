@@ -1,4 +1,4 @@
-package com.web.example.utils;
+package com.web.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

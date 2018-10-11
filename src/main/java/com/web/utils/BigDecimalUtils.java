@@ -1,4 +1,4 @@
-package com.web.example.utils;
+package com.web.utils;
 
 import java.math.BigDecimal;
 
