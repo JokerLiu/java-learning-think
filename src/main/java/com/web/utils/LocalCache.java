@@ -1,7 +1,9 @@
 package com.web.utils;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashMap;
@@ -59,7 +61,8 @@ public class LocalCache {
     @Getter
     @Setter
     @AllArgsConstructor
-    class CacheContent {
+    @NoArgsConstructor
+    private class CacheContent {
         // 缓存生效时间
         private int cacheMillis;
         // 缓存对象
