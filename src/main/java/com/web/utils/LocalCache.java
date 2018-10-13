@@ -31,7 +31,8 @@ public class LocalCache {
     }
 
     public String getLocalCache(String key) {
-        CacheContent cc = map.get(key);
+        CacheContent cc = new CacheContent();
+        // map.get(key);
 
         if (null == cc) {
             return null;
@@ -41,7 +42,7 @@ public class LocalCache {
 
         if (cc.getCacheMillis() > 0 && currentTime - cc.getCreateTime() > cc.getCacheMillis()) {
             //超过缓存过期时间,返回null
-            map.remove(key);
+            // map.remove(key);
             return null;
         } else {
             return cc.getElement();
@@ -51,7 +52,7 @@ public class LocalCache {
     public void setLocalCache(String key, int cacheMillis, String value) {
         long currentTime = System.currentTimeMillis();
         CacheContent cc = new CacheContent(cacheMillis, value, currentTime);
-        map.put(key, cc);
+        // map.put(key, cc);
     }
 
     public static LocalCache getInStance() {
