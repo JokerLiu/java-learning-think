@@ -1,4 +1,4 @@
-package com.example.schedule;
+package com.web.example.schedule;
 
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ public class TestTask {
 
     SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 300000)
     public void timerRate() {
         log.info("定时任务已经启动，当前时间：" + sdf.format(new Date()));
     }

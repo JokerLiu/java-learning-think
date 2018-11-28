@@ -34,6 +34,7 @@ public class RabbitMQConfig {
     // 创建队列
     @Bean
     public Queue queue() {
+        System.out.println(queuename);
         return new Queue(QUEUE_NAME);
     }
 

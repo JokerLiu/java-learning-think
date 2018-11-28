@@ -10,11 +10,19 @@ import java.lang.reflect.Method;
  * @Date: Created in 2018/11/19 18:10
  */
 @Slf4j
-public class TestClassLoad {
+public class TestReflect {
+
+    public String initStr = "asd";
 
     private Integer age;
 
     private String name;
+
+    static
+    {
+        System.out.println("Tester类的静态初始化块...");
+    }
+
 
 
     void classLoadM(Integer age){
@@ -30,12 +38,13 @@ public class TestClassLoad {
     }
 
     public static void main(String[] args) {
-        Class<TestClassLoad> clz = TestClassLoad.class;
+        Class<TestReflect> clz = TestReflect.class;
         Method[] declaredMethods = clz.getDeclaredMethods();
         for (Method method : declaredMethods) {
             log.debug("method:{}", method.getName());
             System.out.println("----------------------------------");
         }
+
 
     }
 }
