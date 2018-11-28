@@ -17,3 +17,25 @@ mybatis:
   type-aliases-package: com.example.*
   reloadMapper.enabled: true
   dbColumnUnderline: true
+
+spring:
+  rabbitmq:
+    addresses: 192.168.1.119
+
+    port: 5672
+    username: joker
+    password: joker
+    virtual-host: /
+  profiles:
+    active: direct #测试交换器类型：direct、fanout、topic
+
+rabbitmq:
+  config:
+    queue:
+      name: spring-boot-queue
+      descript: 队列
+    exchange:
+      name: spring-boot-exchange
+      descript: 交换机
+    routing:
+      key: spring-boot-key
