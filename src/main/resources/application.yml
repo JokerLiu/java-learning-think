@@ -20,7 +20,7 @@ mybatis:
 
 spring:
   rabbitmq:
-    addresses: 192.168.1.188
+    addresses: 192.168.1.160
     port: 5672
     username: joker
     password: joker

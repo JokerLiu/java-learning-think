@@ -2,6 +2,7 @@ package com.mq.rabbit.quickstart;
 
 import cn.hutool.core.lang.Console;
 import com.mq.rabbit.RabbitMQConfig;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,8 @@ import org.springframework.stereotype.Component;
 public class Consumer {
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
-    public void consumeMessage(String message) {
+    public void consumeMessage(Message message) {
+        System.out.println(message.getMessageProperties().getHeaders().getClass());
         Console.log("consume message {}", message);
     }
 

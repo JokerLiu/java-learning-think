@@ -6,6 +6,7 @@ import com.mq.rabbit.RabbitMQConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -28,6 +29,12 @@ public class Producer {
                 rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY, value);
             }
         }).start();
+        return "ok";
+    }
+
+    @GetMapping("/sendMessageByWrite")
+    public String sendMessageByWrite(@RequestParam("writeStr") String writeStr) {
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY, writeStr);
         return "ok";
     }
 
