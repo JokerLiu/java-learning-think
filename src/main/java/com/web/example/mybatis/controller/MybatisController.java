@@ -20,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/mybatis")
 public class MybatisController {
+
     @Autowired
     private MybatisAccountService accountService;
 

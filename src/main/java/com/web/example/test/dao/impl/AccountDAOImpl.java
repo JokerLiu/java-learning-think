@@ -1,4 +1,4 @@
-package com.example.test.dao.impl;
+package com.web.example.test.dao.impl;
 
 import com.example.test.dao.IAccountDAO;
 import com.example.test.entity.Account;
@@ -17,6 +17,7 @@ import java.util.List;
  */
 @Repository
 public class AccountDAOImpl implements IAccountDAO {
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

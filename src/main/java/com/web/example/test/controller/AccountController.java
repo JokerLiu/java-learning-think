@@ -4,6 +4,7 @@ import com.example.test.entity.Account;
 import com.example.test.entity.TestBuilder;
 import com.example.test.entity.TestLombok1;
 import com.example.test.service.IAccountService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
  * @author: liuyl
  * @date: 2018/4/21 14:27
  */
+@Api(description = "SpringJDBC实现CRUD")
 @Slf4j
 @RestController
 @RequestMapping("/account")

@@ -2,13 +2,14 @@ package com.mq.rabbit;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,15 +18,20 @@ import org.springframework.context.annotation.Configuration;
  * @Description:
  * @Date: Created in 2018/11/28 10:11
  */
+@Slf4j
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties("rabbitmq.config")
 public class RabbitMQConfig {
 
-    private String queuename;
-    private String exchangename;
-    private String routingkey;
+    @Value("${rabbitmq.queue.name}")
+    private String queue;
+
+    @Value("${rabbitmq.exchange.name}")
+    private String exchange;
+
+    @Value("${rabbitmq.routing.key}")
+    private String routing;
 
     public final static String QUEUE_NAME = "spring-boot-queue";
     public final static String EXCHANGE_NAME = "spring-boot-exchange";
@@ -34,7 +40,7 @@ public class RabbitMQConfig {
     // 创建队列
     @Bean
     public Queue queue() {
-        System.out.println(queuename);
+        log.warn("==================================================={}", queue);
         return new Queue(QUEUE_NAME);
     }
 

@@ -26,15 +26,14 @@ spring:
     password: joker
     virtual-host: /
   profiles:
-    active: direct #测试交换器类型：direct、fanout、topic
+    active: fanout #测试交换器类型：direct（默认）、fanout、topic
 
 rabbitmq:
-  config:
-    queue:
-      name: spring-boot-queue
-      descript: 队列
-    exchange:
-      name: spring-boot-exchange
-      descript: 交换机
-    routing:
-      key: spring-boot-key
+  queue:
+    name: spring-boot-queue
+    descript: 队列
+  exchange:
+    name: spring-boot-exchange
+    descript: 交换机
+  routing:
+    key: spring-boot-key
